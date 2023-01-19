@@ -8,6 +8,7 @@ int main() {
     std::cout << "Test1\n" << std::endl;
 
     std::cout << "Test2\n" << std::endl;
+    std::cout << "Test3\n";
     return 0;
 }
 
