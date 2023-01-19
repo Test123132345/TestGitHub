@@ -1,11 +1,11 @@
 # TestGitHub
 ## Test Project
-** TEST PROJECT **
-~~ TESY PROJECT ~~
+**TEST PROJECT**
+~~TESY PROJECT~~
 
 # Contributors:
-    ###### Yaroslav
-    ###### Vlad
-    ###### Maximka
-    ###### LaT1K
+    ######Yaroslav
+    ######Vlad
+    ######Maximka
+    ######LaT1K
 
