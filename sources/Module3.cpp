@@ -18,3 +18,4 @@ void search_products() {
     in_file.close();
     std::cout << "Press any key to continue...\n";
     std::cin.ignore();
+}
