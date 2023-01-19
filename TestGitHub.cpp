@@ -3,7 +3,6 @@
 int main() {
     std::cout << "Hello World!\n";
 
- testers
     std::cout << "HI YARIK!!!!";
 
     std::cout << "Test1\n" << std::endl;
