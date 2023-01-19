@@ -10,7 +10,7 @@ int main() {
     else {
         std::cout << "test";
     }
-    std::cout << "3";
+    std::cout << "9999";
 
     return 0;
 }
