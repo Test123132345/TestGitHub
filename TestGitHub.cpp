@@ -1,14 +1,16 @@
 #include <iostream>
 
 int main() {
-    std::cout << "Hello World!\n";
+    std::cout << "Hello World!\nInput rand num";
+    int num;
+    std::cin >> num;
+    if (num == 1) {
+        std::cout << "HUI!";
+    }
+    else {
+        std::cout << "test";
+    }
 
-    std::cout << "HI YARIK!!!!";
-
-    std::cout << "Test1\n" << std::endl;
-
-    std::cout << "Test2\n" << std::endl;
-    std::cout << "Test3\n";
     return 0;
 }
 
