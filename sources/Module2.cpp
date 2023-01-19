@@ -17,21 +17,17 @@ void add_products() {
         std::cin >> products[i].price;
     }
 
-    std::ifstream in_file("products.dat", std::ios::binary);
-    std::vector<Product> existing_products((std::istreambuf_iterator<char>(in_file)), (std::istreambuf_iterator<char>()));
-    in_file.close();
-
-    for (const auto& product : products) {
+    std::fstream file("products.dat", std::ios::binary | std::ios::in | std::ios::out);
+    std::vector<Product> existing_products;
+    file.seekp(0);
+    for (const auto product : products) {
         existing_products.push_back(product);
     }
-
-    std::ofstream out_file("products.dat", std::ios::binary);
     for (const auto& product : existing_products) {
-        out_file.write(reinterpret_cast<const char*>(&product), sizeof(Product));
+        file.write((char*)&product, sizeof(Product));
     }
-    out_file.close();
+    file.close();
 
     std::cout << "File updated. Press any key to continue...\n";
-    std::cin.ignore();
     std::cin.get();
 }

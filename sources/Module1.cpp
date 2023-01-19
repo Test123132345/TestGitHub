@@ -24,6 +24,6 @@ void input_products() {
     out_file.close();
 
     std::cout << "File created. Press any key to continue...\n";
-    std::cin.ignore();
     std::cin.get();
+    return;
 }

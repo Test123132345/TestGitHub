@@ -16,25 +16,25 @@ int main() {
     std::cout << "Enter your choice: ";
     std::cin >> user_choice;
 
-    switch (user_choice) {
-        case 1: {
-            input_products();
-            break;
+        switch (user_choice) {
+            case 1: {
+                input_products();
+                break;
+            }
+            case 2: {
+                add_products();
+                break;
+            }
+            case 3: {
+                std::cin.get();
+                search_products();
+                break;
+            }
+            case 4: {
+                exit = true;
+                break;
+            }
         }
-        case 2: {
-            add_products();
-            break;
-        }
-        case 3: {
-            std::cin.get();
-            search_products();
-            break;
-        }
-        case 4: {
-            exit = true;
-            break;
-        }
-    }
     }
     return 0;
 }

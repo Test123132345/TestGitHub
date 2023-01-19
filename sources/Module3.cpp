@@ -1,16 +1,18 @@
 #include "Module3.hpp"
+#include <string.h>
+
 void search_products() {
     Product product;
-    std::string name;
+    char name[100];
 
     std::cout << "Enter the name of the product to search: ";
-    std::getline(std::cin, name);
+    std::cin.getline(name, 100);
 
     std::ifstream in_file("products.dat", std::ios::binary);
     std::cout << "List of found products:\n";
     std::cout << " Code         Name          Price\n";
-    while (in_file.read(reinterpret_cast<char*>(&product), sizeof(Product))) {
-        if (product.name.find(name) != std::string::npos) {
+    while (in_file.read((char*)&product, sizeof product)) {
+        if (_strnicmp(product.name.c_str(), name, strlen(name))) {
             std::cout << product.code << "          " << product.name 
             << "          " << product.price << std::endl;
         }
