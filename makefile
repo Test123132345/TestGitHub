@@ -1,6 +1,6 @@
 NAME = app
 
-SRC = main.cpp
+SRC =   main.cpp Module1.cpp Module2.cpp Module3.cpp
 
 SRCDIR = sources/
 
@@ -13,14 +13,11 @@ FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
-$(NAME): $(OBJDIR) $(OBJ) ./headers/*.hpp
-	g++ -std=c++11 $(FLAGS) $(OBJ) -o $(NAME) -lncurses
+$(NAME): $(OBJ) 
+	g++ $(OBJ) -o $(NAME) $(FLAGS)
 
-$(OBJDIR):
-	mkdir $(OBJDIR)
-
-$(OBJ) : $(OBJDIR)%.o : $(SRCDIR)%.cpp ./headers/*.hpp
-	g++ -std=c++11 $(FLAGS) -o $@ -c $< -I ./headers
+$(OBJDIR)%.o: $(SRCDIR)%.cpp
+	g++ -std=c++17 $(FLAGS) -I ./headers -c $< -o $@
 
 clean:
 	rm -rf $(OBJDIR)
@@ -28,4 +25,4 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean $(NAME)
+re: fclean all

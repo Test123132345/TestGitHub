@@ -11,12 +11,12 @@ void search_products() {
     std::ifstream in_file("products.dat", std::ios::binary);
     std::cout << "List of found products:\n";
     std::cout << " Code         Name          Price\n";
-    while (in_file.read((char*)&product, sizeof product)) {
-        if (_strnicmp(product.name.c_str(), name, strlen(name))) {
-            std::cout << product.code << "          " << product.name 
-            << "          " << product.price << std::endl;
-        }
-    }
+    // while (in_file.read((char*)&product, sizeof product)) {
+    //     if (_strnicmp(product.name.c_str(), name, strlen(name))) {
+    //         std::cout << product.code << "          " << product.name 
+    //         << "          " << product.price << std::endl;
+    //     }
+    // }
     in_file.close();
     std::cout << "Press any key to continue...\n";
     std::cin.ignore();
