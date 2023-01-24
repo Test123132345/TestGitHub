@@ -20,6 +20,7 @@ void add_products() {
     std::fstream file("products.dat", std::ios::binary | std::ios::in | std::ios::out);
     std::vector<Product> existing_products;
     file.seekp(0);
+    // push
     for (const auto &product : products) {
         existing_products.push_back(product);
     }
